@@ -1,0 +1,213 @@
+\documentclass[9pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[]{hyperref}
+\hypersetup{
+    colorlinks=true,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=NavyBlue,%
+    urlcolor=NavyBlue,
+    breaklinks=true
+}
+\urlstyle{same}
+
+\leftmargin=0.25in
+\oddsidemargin=0.25in
+\textwidth=6.0in
+\topmargin=-0.25in
+\textheight=9.25in
+
+\raggedright
+
+\pagenumbering{arabic}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DEFINITIONS FOR RESUME
+
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}
+}
+
+\newcommand{\lineover}{
+	\begin{changemargin}{-0.05in}{-0.05in}
+		\vspace*{-8pt}
+		\hrulefill \\
+		\vspace*{-2pt}
+	\end{changemargin}
+}
+
+\newcommand{\header}[1]{
+	\begin{changemargin}{-0.5in}{-0.5in}
+		\scshape{#1}\\
+  	\lineover
+	\end{changemargin}
+}
+
+\newcommand{\contact}[5]{
+	\begin{changemargin}{-0.25in}{0in}
+		\begin{body}
+			{\LARGE \scshape {#1}} \hfill
+            {{#2}}\\
+            {{#3}} \hfill
+			{\url{#4}}\\ \hfill
+            {\url{#5}} \smallskip
+		\end{body}
+	\end{changemargin}
+}
+
+\newcommand{\summary}[1]{
+	\begin{changemargin}{-0.5in}{-0.5in}
+    \smallskip
+		{#1}
+	\end{changemargin}
+}
+
+\newcommand{\jobdescription}[1]{
+	\begin{changemargin}{0.15in}{0.15in}
+    \smallskip
+		{#1}
+    \medskip
+	\end{changemargin}
+}
+
+\newcommand{\jobtitle}[3]{
+	\textbf{#1}, \emph{#2} \hfill \emph{#3}\\
+}
+
+\newcommand{\subjobtitle}[2] {
+    \begin{changemargin}{0.125in}{0in}
+        \emph{prev.} \textbf{#1} \hfill \emph{#2}\\
+    \end{changemargin}
+}
+
+\newenvironment{body} {
+	\vspace*{-16pt}
+	\begin{changemargin}{-0.25in}{-0.5in}
+  }	
+	{\end{changemargin}
+}	
+
+\newcommand{\school}[4]{
+	\textbf{#1} \hfill \emph{#2\\}
+	#3\\ 
+	#4\\
+}
+
+% END RESUME DEFINITIONS
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Name
+\contact{Jeffery Ni}{Seattle, WA}{Software Development Engineer}{jefferyni@gmail.com}{(425) 205-0516}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objective
+\header{Personal Statement}
+
+\begin{body}
+	\vspace{14pt}
+	Experienced and data-driven software engineer passionate about delivering quality ML models and services.
+\end{body}
+
+\medskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Skills
+\header{Skills}
+
+\begin{body}
+	\vspace{14pt}
+	\emph{\textbf{Programming:}}{} Python, JavaScript, Java, Golang, HTML, CSS, Shell, SQL, NoSQL\\
+	\smallskip
+	\emph{\textbf{Technologies and Methodologies:}}{} AWS, NLP, Pytorch, HuggingFace, Scikit-Learn, Redis, React, Git\\
+\end{body}
+
+\medskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Experience
+\header{Career History}
+
+\begin{body}
+	\vspace{14pt}
+	
+	%%% SDE II, Qualtrics %%%
+	\jobtitle{Software Development Engineer II}{Qualtrics}{March 2021 - Present}
+	\subjobtitle{Software Development Engineer I}{January 2020 - March 2021}
+    \subjobtitle{Software Test Engineer I}{August 2018 - January 2020}
+	\jobdescription{
+		\begin{itemize} \itemsep -0pt  % reduce space between items
+			\item Developed and maintained NLP models and services for Qualtrics's Conversational Analytics team, including backend APIs (Node, AWS, NoSQL), NLP models (HuggingFace, Scikit-Learn, Pytorch), and language libraries (Javascript, Python)
+			\item Facillitated end-to-end success of NLP models used for extracting latent information from long-form text (data collection, annotation, modelling, productionization)
+			\item Serviced model implementations for broader use cases across Qualtrics and led integration efforts to drive business value
+			\item Drove efforts for data-driven integrations of NLP models with Quatlrics' Tickets system to allow customers to derive deeper insights
+			\item Mentored and guided multiple interns and peers
+		\end{itemize}
+	}
+	
+
+	%%% Neural Coding Intern, Allen Institute  %%%
+	\jobtitle{Neural Coding Intern}{Allen Institute for Brain Science}{June 2017 - August 2017}
+	\jobdescription{
+		\begin{itemize} \itemsep -0pt  % reduce space between items
+			\item Researched and implemented methods for analyzing multi-dimensional signal data gathered by Neuropixels electrodes implanted in live mice under stimulation
+			\item Used signal processing techniques to extract features for categorizing brain region (Fourier transform, signal filters, wavelet transforms)
+			\item Applied ML algorithms to signal features and labelled datasets to create models for quicker electrode labelling (Scikit-Learn, Pandas, Numpy)
+			\item Implemented small-dataset methods to combat the limited amount of training data while limiting overfitting (imblearn)
+		\end{itemize}
+	}
+	
+	
+	%%% Undergraduate Researcher, Brunton Lab %%%
+	\jobtitle{Undergraduate Researcher}{Brunton Lab, Universtiy of Washington}{December 2016 - June 2018}
+	\jobdescription{
+		\begin{itemize} \itemsep -0pt  % reduce space between items
+			\item Researched NLP methods on naturalistic, low-quality big datasets to automatically derive labels for further research with electrocorticography data (Python, Shell)
+			\item Investigated effects of open-source NLP model architectures being trained on lower-quality data, often half the sampling rate and with significant noise introduced
+			\item Curated training set for use with Kaldi, an open source ASR system, and evaluated multiple model iterations trained on that dataset
+			\item Read state of the art unsupervized speaker diarization papers and tested findings on the lab's dataset to achieve a 72\% diarization error rate
+		\end{itemize}
+	}
+	
+\end{body}
+
+\medskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Education
+\header{Education}
+
+\begin{body}
+	\vspace{14pt}
+	\textbf{B.S. Honors in Biomedical Engineering} \hfill \emph{June 2018} \\
+	\emph{University of Washington}, Seattle, WA \\
+    \begin{changemargin}{0.15in}{0.15in}
+        \begin{description} \itemsep -0pt  % reduce space between items
+            \item Certificate in Computational Neuroscience
+            \item Cum Laude
+        \end{description}
+    \end{changemargin}
+\end{body}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
